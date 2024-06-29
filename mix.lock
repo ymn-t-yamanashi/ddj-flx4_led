@@ -1,0 +1,9 @@
+%{
+  "castore": {:hex, :castore, "1.0.7", "b651241514e5f6956028147fe6637f7ac13802537e895a724f90bf3e36ddd1dd", [:mix], [], "hexpm", "da7785a4b0d2a021cd1292a60875a784b6caef71e76bf4917bdee1f390455cf5"},
+  "jason": {:hex, :jason, "1.4.1", "af1504e35f629ddcdd6addb3513c3853991f694921b1b9368b0bd32beb9f1b63", [:mix], [{:decimal, "~> 1.0 or ~> 2.0", [hex: :decimal, repo: "hexpm", optional: true]}], "hexpm", "fbb01ecdfd565b56261302f7e1fcc27c4fb8f32d56eab74db621fc154604a7a1"},
+  "midiex": {:hex, :midiex, "0.6.1", "82ddc276fd0650ffc3b12908e0460ff497f6f2bb56aa7fb96442210679373062", [:mix], [{:rustler, "~> 0.29.0", [hex: :rustler, repo: "hexpm", optional: true]}, {:rustler_precompiled, "~> 0.6", [hex: :rustler_precompiled, repo: "hexpm", optional: false]}], "hexpm", "3de91cbf844740ee7992579bc607bc6d832ae5c17689e78946659357e948ed00"},
+  "portmidi": {:hex, :portmidi, "5.1.2", "17a70db5d09885b15f841f878e2f4622996c02cf05ffeb90173d69d38f2589a8", [:make, :mix], [], "hexpm", "988044c7248883db855f129cd784698a300a9b86d4245164449e574545ec7de0"},
+  "rustler": {:hex, :rustler, "0.29.1", "880f20ae3027bd7945def6cea767f5257bc926f33ff50c0d5d5a5315883c084d", [:mix], [{:jason, "~> 1.0", [hex: :jason, repo: "hexpm", optional: false]}, {:toml, "~> 0.6", [hex: :toml, repo: "hexpm", optional: false]}], "hexpm", "109497d701861bfcd26eb8f5801fe327a8eef304f56a5b63ef61151ff44ac9b6"},
+  "rustler_precompiled": {:hex, :rustler_precompiled, "0.7.2", "097f657e401f02e7bc1cab808cfc6abdc1f7b9dc5e5adee46bf2fd8fdcce9ecf", [:mix], [{:castore, "~> 0.1 or ~> 1.0", [hex: :castore, repo: "hexpm", optional: false]}, {:rustler, "~> 0.23", [hex: :rustler, repo: "hexpm", optional: true]}], "hexpm", "7663faaeadc9e93e605164dcf9e69168e35f2f8b7f2b9eb4e400d1a8e0fe2999"},
+  "toml": {:hex, :toml, "0.7.0", "fbcd773caa937d0c7a02c301a1feea25612720ac3fa1ccb8bfd9d30d822911de", [:mix], [], "hexpm", "0690246a2478c1defd100b0c9b89b4ea280a22be9a7b313a8a058a2408a2fa70"},
+}
