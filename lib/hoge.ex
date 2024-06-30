@@ -3,13 +3,14 @@ defmodule Hoge do
   Documentation for `Hoge`.
   """
 
-
   def hello() do
-    PortMidi.devices
+    PortMidi.devices()
     |> IO.inspect()
 
-    {_, output} = PortMidi.open(:output, "DDJ-FLX4 MIDI 1")
-    |> IO.inspect()
+    {_, output} =
+      PortMidi.open(:output, "DDJ-FLX4 MIDI 1")
+      |> IO.inspect()
+
     Enum.each(1..100, fn _ -> led(output) end)
     PortMidi.close(:output, output)
 
@@ -17,24 +18,33 @@ defmodule Hoge do
   end
 
   def led(output) do
-    ["B0","02", "7f"]
+    ["B0", "02", "7f"]
     |> send_midi(output)
+
     Process.sleep(200)
-    ["B0","02", "00"]
+
+    ["B0", "02", "00"]
     |> send_midi(output)
+
     Process.sleep(200)
-    ["B1","02", "7f"]
+
+    ["B1", "02", "7f"]
     |> send_midi(output)
+
     Process.sleep(200)
-    ["B1","02", "00"]
+
+    ["B1", "02", "00"]
     |> send_midi(output)
+
     Process.sleep(200)
   end
 
   def send_midi(v, output) do
-    data = Enum.map(v, fn x ->  h(x)  end)
-    |> List.to_tuple()
-    |> IO.inspect()
+    data =
+      Enum.map(v, fn x -> h(x) end)
+      |> List.to_tuple()
+      |> IO.inspect()
+
     PortMidi.write(output, data)
   end
 

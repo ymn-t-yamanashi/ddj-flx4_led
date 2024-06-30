@@ -3,6 +3,6 @@ defmodule HogeTest do
   doctest Hoge
 
   test "greets the world" do
-     Hoge.hello()
+    Hoge2.hello()
   end
 end
