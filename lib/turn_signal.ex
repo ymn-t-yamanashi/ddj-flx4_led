@@ -21,10 +21,27 @@ defmodule TurnSignal do
   def start() do
     output = open()
 
-    deck1_signal()
-    |> signal_process(deck1(), output)
+    1..5
+    |> Enum.each(fn _ -> task_deck(output) end)
 
     close(output)
+  end
+
+  def task_deck(output) do
+    task_deck1 =
+      Task.async(fn ->
+        deck1_signal()
+        |> signal_process(deck1(), output)
+      end)
+
+    task_deck2 =
+      Task.async(fn ->
+        deck2_signal()
+        |> signal_process(deck2(), output)
+      end)
+
+    Task.await(task_deck1)
+    Task.await(task_deck2)
   end
 
   def signal_process(pattern, deck, output) do
@@ -35,6 +52,8 @@ defmodule TurnSignal do
 
     pattern
     |> Enum.each(&signal_off(&1, deck, output))
+
+    Process.sleep(300)
   end
 
   def signal({pad_up, pad_down}, deck, led_sw, output) do
