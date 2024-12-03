@@ -8,17 +8,15 @@ defmodule Pad do
 
     Enum.each(1..10, fn _ -> led(output) end)
     PortMidi.close(:output, output)
-
-    :world
   end
 
   def led(output) do
-    ["B0", "02", "7f"]
+    ["97", "00", "7f"]
     |> send_midi(output)
 
     Process.sleep(100)
 
-    ["B0", "02", "00"]
+    ["97", "00", "00"]
     |> send_midi(output)
 
     Process.sleep(100)
