@@ -1,2 +1,2 @@
 #!/bin/sh
-mix run --eval "Pad.start()"
+mix run --eval "TurnSignal.start()"
