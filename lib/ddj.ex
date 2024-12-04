@@ -20,13 +20,13 @@ defmodule Ddj do
 
   def pad_list, do: [pad1(), pad2(), pad3(), pad4(), pad5(), pad6(), pad7(), pad8()]
 
-  def open do
-    {_, output} = PortMidi.open(:output, "DDJ-FLX4 MIDI 1")
+  def open(inout \\ :output) do
+    {_, output} = PortMidi.open(inout, "DDJ-FLX4 MIDI 1")
     output
   end
 
-  def close(output) do
-    PortMidi.close(:output, output)
+  def close(output, inout \\ :output) do
+    PortMidi.close(inout, output)
   end
 
   def send_midi(v, output) do
