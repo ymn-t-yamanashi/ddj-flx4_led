@@ -6,11 +6,7 @@ defmodule Mogu do
 
   def start() do
     output = open()
-
     input = open(:input)
-
-    # pad_randoms_task = Task.async(fn -> pad_randoms(output) end)
-
     PortMidi.listen(input, self())
 
     pad_randoms(output, input)
@@ -26,7 +22,6 @@ defmodule Mogu do
     |> Enum.map(fn _ ->
       pad_random(output, input)
     end)
-    |> IO.inspect()
   end
 
   def pad_random(output, input) do
@@ -38,7 +33,8 @@ defmodule Mogu do
 
     ret = midi_in(input)
     pag_all_off(output)
-    ret == no
+    (ret == no)
+    |> IO.inspect()
   end
 
   def pag_all_off(output) do
