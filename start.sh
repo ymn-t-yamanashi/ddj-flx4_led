@@ -1,2 +1,2 @@
 #!/bin/sh
-mix run --eval "Synth.start()"
+mix run --eval "Button.start()"
