@@ -33,6 +33,7 @@ defmodule Mogu do
 
     ret = midi_in(input)
     pag_all_off(output)
+
     (ret == no)
     |> IO.inspect()
   end

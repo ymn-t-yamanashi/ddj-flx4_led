@@ -1,2 +1,2 @@
 #!/bin/sh
-mix run --eval "Mogu.start()"
+mix run --eval "Synth.start()"
