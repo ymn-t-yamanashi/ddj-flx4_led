@@ -1,2 +1,2 @@
 #!/bin/sh
-mix run --eval "TurnSignal.start()"
+mix run --eval "Mogu.start()"
