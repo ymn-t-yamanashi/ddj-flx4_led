@@ -1,2 +1,2 @@
 #!/bin/sh
-mix run --eval "Button.start()"
+mix run --eval "Sequencer.start()"
